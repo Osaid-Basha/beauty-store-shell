@@ -4,7 +4,9 @@ const CATALOG_VERCEL_URL =
 const ACCOUNT_VERCEL_URL =
   import.meta.env.VITE_ACCOUNT_VERCEL_URL?.trim() || 'ACCOUNT_VERCEL_URL'
 
-const CART_VERCEL_URL = 'https://cart-checkout-microfrontend.vercel.app'
+const CART_VERCEL_URL =
+  import.meta.env.VITE_CART_VERCEL_URL?.trim() ||
+  'https://cart-checkout-microfrontend.vercel.app'
 
 export const REMOTE_IDS = Object.freeze({
   CATALOG: 'catalog',
@@ -65,4 +67,3 @@ export function buildRemoteUrl(remote, location) {
 
   return new URL(destination, remoteRoot).toString()
 }
-
