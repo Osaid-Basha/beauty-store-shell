@@ -4,7 +4,7 @@ import { tokens } from '../theme.js'
 
 const footerLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Products', to: '/products' },
+  { label: 'Catalog', to: '/catalog' },
   { label: 'Cart', to: '/cart' },
   { label: 'Login', to: '/login' },
 ]
@@ -69,4 +69,3 @@ export default function Footer() {
     </Box>
   )
 }
-

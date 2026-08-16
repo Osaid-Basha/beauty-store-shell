@@ -8,7 +8,7 @@ import { tokens } from '../theme.js'
 
 const navItems = [
     { label: 'Home', to: '/', icon: HomeOutlinedIcon },
-    { label: 'Products', to: '/products', icon: StorefrontOutlinedIcon },
+    { label: 'Catalog', to: '/catalog', icon: StorefrontOutlinedIcon },
     { label: 'Cart', to: '/cart', icon: ShoppingBagOutlinedIcon },
     { label: 'Account', to: '/login', icon: AccountCircleOutlinedIcon }
 ]
@@ -18,8 +18,8 @@ function isNavigationItemActive(pathname, target) {
     return pathname === '/'
   }
 
-  if (target === '/products') {
-    return pathname === '/products' || pathname.startsWith('/product/')
+  if (target === '/catalog') {
+    return pathname === '/catalog' || pathname.startsWith('/product/')
   }
 
   if (target === '/cart') {

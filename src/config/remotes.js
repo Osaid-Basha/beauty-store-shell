@@ -1,5 +1,6 @@
 const CATALOG_VERCEL_URL =
-  import.meta.env.VITE_CATALOG_VERCEL_URL?.trim() || 'CATALOG_VERCEL_URL'
+  import.meta.env.VITE_CATALOG_VERCEL_URL?.trim() ||
+  'https://catalog-discovery-microfrontend.vercel.app'
 
 const ACCOUNT_VERCEL_URL =
   import.meta.env.VITE_ACCOUNT_VERCEL_URL?.trim() || 'ACCOUNT_VERCEL_URL'

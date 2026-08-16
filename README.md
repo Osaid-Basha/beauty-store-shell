@@ -25,7 +25,7 @@ The Shell passes the complete pathname, query string, and hash to the selected r
 | Shell route | Owner | Iframe source |
 | --- | --- | --- |
 | `/` | Catalog | `CATALOG_VERCEL_URL/` |
-| `/products` | Catalog | `CATALOG_VERCEL_URL/products` |
+| `/catalog` | Catalog | `https://catalog-discovery-microfrontend.vercel.app/catalog` |
 | `/product/:id` | Catalog | `CATALOG_VERCEL_URL/product/:id` |
 | `/cart` | Cart | `https://cart-checkout-microfrontend.vercel.app/cart` |
 | `/checkout/shipping` | Cart | `https://cart-checkout-microfrontend.vercel.app/checkout/shipping` |
@@ -37,20 +37,20 @@ The Shell passes the complete pathname, query string, and hash to the selected r
 | `/orders` | Account | `ACCOUNT_VERCEL_URL/orders` |
 | `/wishlist` | Account | `ACCOUNT_VERCEL_URL/wishlist` |
 
-Unknown Shell routes redirect to `/`.
+The legacy `/products` route and unknown Shell routes redirect to `/catalog`.
 
 ## Configure Catalog and Account
 
 Copy `.env.example` to `.env.local` and replace both placeholders with deployed origins (do not include a trailing slash):
 
 ```dotenv
-VITE_CATALOG_VERCEL_URL=https://your-catalog.vercel.app
+VITE_CATALOG_VERCEL_URL=https://catalog-discovery-microfrontend.vercel.app
 VITE_ACCOUNT_VERCEL_URL=https://your-account.vercel.app
 ```
 
 For Vercel, add the same names and values in **Project Settings → Environment Variables**, then redeploy. Vite injects client configuration during the build, so changing an environment variable requires a new build.
 
-The literal `CATALOG_VERCEL_URL` and `ACCOUNT_VERCEL_URL` fallbacks live in `src/config/remotes.js`. Until each one is replaced or supplied through an environment variable, the Shell displays a configuration notice instead of recursively loading itself as a relative iframe URL.
+The deployed Catalog origin and the `ACCOUNT_VERCEL_URL` fallback live in `src/config/remotes.js`. Until the Account placeholder is replaced or supplied through an environment variable, the Shell displays a configuration notice for Account routes instead of recursively loading itself as a relative iframe URL.
 
 ## Iframe navigation contract
 

@@ -23,6 +23,7 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<MicrofrontendFrame />} />
+                <Route path="/products" element={<Navigate to="/catalog" replace />} />
 
                 {REMOTE_ROUTES.filter((route) => route.path !== '/').map((route) => (
                     <Route
