@@ -6,34 +6,36 @@ import Navbar from './components/Navbar.jsx'
 import { REMOTE_ROUTES } from './routing/remoteRoutes.js'
 
 export default function App() {
-  return (
-    <Box
-      sx={{
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-        '@supports (height: 100dvh)': {
-          height: '100dvh',
-        },
-      }}
-    >
-      <Navbar />
+    return (
+        <Box
+            sx={{
+                width: '100%',
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                '@supports (height: 100dvh)': {
+                    height: '100dvh',
+                },
+            }}
+        >
+            <Navbar />
 
-      <Routes>
-        {REMOTE_ROUTES.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={<MicrofrontendFrame />}
-          />
-        ))}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+            <Routes>
+                <Route path="/" element={<Navigate to="/login" replace />} />
 
-      <Footer />
-    </Box>
-  )
+                {REMOTE_ROUTES.filter((route) => route.path !== '/').map((route) => (
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={<MicrofrontendFrame />}
+                    />
+                ))}
+
+                <Route path="*" element={<Navigate to="/login" replace />} />
+            </Routes>
+
+            <Footer />
+        </Box>
+    )
 }
-

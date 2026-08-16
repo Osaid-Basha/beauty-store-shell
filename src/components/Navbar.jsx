@@ -7,10 +7,10 @@ import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { tokens } from '../theme.js'
 
 const navItems = [
-  { label: 'Home', to: '/', icon: HomeOutlinedIcon },
-  { label: 'Products', to: '/products', icon: StorefrontOutlinedIcon },
-  { label: 'Cart', to: '/cart', icon: ShoppingBagOutlinedIcon },
-  { label: 'Login', to: '/login', icon: AccountCircleOutlinedIcon },
+    { label: 'Home', to: '/', icon: HomeOutlinedIcon },
+    { label: 'Products', to: '/products', icon: StorefrontOutlinedIcon },
+    { label: 'Cart', to: '/cart', icon: ShoppingBagOutlinedIcon },
+    { label: 'Account', to: '/login', icon: AccountCircleOutlinedIcon }
 ]
 
 function isNavigationItemActive(pathname, target) {
@@ -30,9 +30,14 @@ function isNavigationItemActive(pathname, target) {
     )
   }
 
-  return ['/login', '/register', '/profile', '/orders', '/wishlist'].includes(
-    pathname,
-  )
+    return [
+        '/login',
+        '/register',
+        '/dashboard',
+        '/order-history',
+        '/reviews',
+        '/wishlist',
+    ].includes(pathname)
 }
 
 export default function Navbar() {
