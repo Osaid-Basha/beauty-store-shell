@@ -22,7 +22,7 @@ export default function App() {
             <Navbar />
 
             <Routes>
-                <Route path="/" element={<Navigate to="/login" replace />} />
+                <Route path="/" element={<MicrofrontendFrame />} />
 
                 {REMOTE_ROUTES.filter((route) => route.path !== '/').map((route) => (
                     <Route
@@ -32,7 +32,7 @@ export default function App() {
                     />
                 ))}
 
-                <Route path="*" element={<Navigate to="/login" replace />} />
+                <Route path="*" element={<Navigate to="/catalog" replace />} />
             </Routes>
 
             <Footer />

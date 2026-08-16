@@ -3,6 +3,7 @@ import { REMOTE_IDS } from '../config/remotes.js'
 
 export const REMOTE_ROUTES = Object.freeze([
   Object.freeze({ path: '/', remoteId: REMOTE_IDS.CATALOG }),
+  Object.freeze({ path: '/catalog', remoteId: REMOTE_IDS.CATALOG }),
   Object.freeze({ path: '/products', remoteId: REMOTE_IDS.CATALOG }),
   Object.freeze({ path: '/product/:id', remoteId: REMOTE_IDS.CATALOG }),
   Object.freeze({ path: '/cart', remoteId: REMOTE_IDS.CART }),
